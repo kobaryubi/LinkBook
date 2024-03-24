@@ -19,5 +19,5 @@ struct BookRow: View {
 }
 
 #Preview {
-    BookRow(book: Book(title: "book title"))
+    BookRow(book: Book(id:"1", title: "book title"))
 }
