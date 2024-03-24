@@ -19,7 +19,6 @@ struct BookList: View {
                 BookRow(book: book)
             }
         }
-        .navigationTitle("Books")
     }
 }
 

@@ -16,6 +16,7 @@ struct ContentView: View {
                 .navigationDestination(for: Book.self) { book in
                     BookDetail(book: book)
                 }
+                .navigationTitle("Books")
         }
     }
 }
