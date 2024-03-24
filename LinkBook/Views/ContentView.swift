@@ -12,14 +12,11 @@ struct ContentView: View {
     
     var body: some View {
         NavigationStack(path: $path) {
-            VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
-            }
-            .padding()
-            
+            BookList()
+                .navigationDestination(for: Book.self) { book in
+                    BookDetail(book: book)
+                }
+                .navigationTitle("Books")
         }
     }
 }
