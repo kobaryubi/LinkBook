@@ -12,9 +12,10 @@ struct BookDetail: View {
     
     var body: some View {
         Text(book.title)
+            .navigationTitle(book.title)
     }
 }
 
 #Preview {
-    BookDetail(book: Book(id: "1", title: "book title"))
+    BookDetail(book: Book(id: "1", title: "book title", links: []))
 }
