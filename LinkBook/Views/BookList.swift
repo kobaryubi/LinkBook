@@ -8,15 +8,18 @@
 import SwiftUI
 
 struct BookList: View {
-    var books = [
-        Book(id: "1", title: "book title 1", links: []),
-        Book(id: "2", title: "book title 2", links: []),
-    ]
+    var books = (0...100).map { index in
+        Book(id: "\(index)", title: "book title \(index)", links: [])
+    }
     
     var body: some View {
-        List(books) { book in
-            NavigationLink(value: book) {
-                BookRow(book: book)
+        ScrollView {
+            LazyVStack {
+                ForEach(books) { book in
+                    NavigationLink(value: book) {
+                        BookRow(book: book)
+                    }
+                }
             }
         }
         .navigationTitle("Books")
