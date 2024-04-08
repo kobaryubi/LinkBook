@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct LinkBookApp: App {
+    @State private var navigation = Navigation()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(navigation)
         }
     }
 }

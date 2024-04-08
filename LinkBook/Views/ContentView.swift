@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var path = NavigationPath()
+    @Environment(Navigation.self) private var navigation
     
     var body: some View {
-        NavigationStack(path: $path) {
+        @Bindable var navigation = navigation
+        
+        NavigationStack(path: $navigation.path) {
             BookList()
                 .navigationDestination(for: Book.self) { book in
                     BookDetail(book: book)
