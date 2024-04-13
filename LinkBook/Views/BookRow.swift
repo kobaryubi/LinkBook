@@ -12,6 +12,14 @@ struct BookRow: View {
     
     var body: some View {
         HStack {
+            Image(systemName: "plus")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding(8)
+                .frame(width: 32, height: 32)
+                .background(Color.gray.opacity(0.2))
+                .foregroundColor(.red)
+                .clipShape(RoundedRectangle(cornerRadius: 4))
             Text(book.title)
             Spacer()
         }
