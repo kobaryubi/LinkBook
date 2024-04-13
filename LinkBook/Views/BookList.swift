@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BookList: View {
-        @State private var q = ""
+    @State private var q = ""
     
     var books = (0...100).map { index in
         Book(id: "\(index)", title: "book title \(index)", links: [])
@@ -25,18 +25,17 @@ struct BookList: View {
     }
     
     var body: some View {
-        ScrollView {
+        VStack {
             TextField(
                 "Find in Books",
                 text: $q
             )
-            LazyVStack {
-                ForEach(filteredBooks) { book in
-                    NavigationLink(value: book) {
-                        BookRow(book: book)
-                    }
+            List(filteredBooks) { book in
+                NavigationLink(value: book) {
+                    BookRow(book: book)
                 }
             }
+            .listStyle(PlainListStyle())
         }
         .navigationTitle("Books")
     }
