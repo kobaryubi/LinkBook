@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BookList: View {
     @State private var q = ""
+    @State private var isPresentedSheet = false
     
     var books = (0...100).map { index in
         Book(id: "\(index)", title: "book title \(index)", links: [])
@@ -30,14 +31,26 @@ struct BookList: View {
                 "Find in Books",
                 text: $q
             )
-            List(filteredBooks) { book in
-                NavigationLink(value: book) {
-                    BookRow(book: book)
+            List {
+                Button(action: presentSheet) {
+                    BookRow(book: Book(id: "New Book", title: "New Book...", links: []))
+                }
+                ForEach(filteredBooks) {book in
+                    NavigationLink(value: book) {
+                        BookRow(book: book)
+                    }
                 }
             }
             .listStyle(PlainListStyle())
         }
         .navigationTitle("Books")
+        .sheet(isPresented: $isPresentedSheet) {
+            BookCreateView()
+        }
+    }
+    
+    func presentSheet() {
+        isPresentedSheet = true
     }
 }
 
