@@ -17,6 +17,7 @@
 		2C51788A2BAFBC3000969298 /* BookDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C5178892BAFBC3000969298 /* BookDetail.swift */; };
 		2C51788C2BB1A3C000969298 /* Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C51788B2BB1A3C000969298 /* Link.swift */; };
 		2CB4FB5D2BC2D828001C9DDB /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4FB5C2BC2D828001C9DDB /* Navigation.swift */; };
+		2CB4FB5F2BCB75E2001C9DDB /* BookCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB4FB5E2BCB75E2001C9DDB /* BookCreateView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		2C5178892BAFBC3000969298 /* BookDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetail.swift; sourceTree = "<group>"; };
 		2C51788B2BB1A3C000969298 /* Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Link.swift; sourceTree = "<group>"; };
 		2CB4FB5C2BC2D828001C9DDB /* Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
+		2CB4FB5E2BCB75E2001C9DDB /* BookCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCreateView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				2C5178852BAE6AA800969298 /* BookRow.swift */,
 				2C5178872BAECD9700969298 /* BookList.swift */,
 				2C5178892BAFBC3000969298 /* BookDetail.swift */,
+				2CB4FB5E2BCB75E2001C9DDB /* BookCreateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 				2C5178762BA6CDD200969298 /* ContentView.swift in Sources */,
 				2C51788C2BB1A3C000969298 /* Link.swift in Sources */,
 				2C5178742BA6CDD200969298 /* LinkBookApp.swift in Sources */,
+				2CB4FB5F2BCB75E2001C9DDB /* BookCreateView.swift in Sources */,
 				2CB4FB5D2BC2D828001C9DDB /* Navigation.swift in Sources */,
 				2C5178882BAECD9700969298 /* BookList.swift in Sources */,
 				2C5178832BADB5A300969298 /* Book.swift in Sources */,
