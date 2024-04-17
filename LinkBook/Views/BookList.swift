@@ -46,21 +46,7 @@ struct BookList: View {
         .navigationTitle("Books")
         .sheet(isPresented: $isPresentedSheet) {
             NavigationStack {
-                BookCreate()
-                    .navigationTitle("New Book")
-                    .navigationBarTitleDisplayMode(.inline)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
-                                isPresentedSheet = false
-                            }
-                        }
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Create") {
-                                isPresentedSheet = false
-                            }
-                        }
-                    }
+                BookCreate(isPresentedSheet: $isPresentedSheet)
             }
         }
     }
