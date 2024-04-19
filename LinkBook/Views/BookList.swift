@@ -29,7 +29,6 @@ struct BookList: View {
                 BookCreate(isPresentedSheet: $isPresentedSheet)
             }
         }
-        
     }
     
     func presentSheet() {
