@@ -8,47 +8,28 @@
 import SwiftUI
 
 struct BookList: View {
-    @State private var q = ""
+    var books: [Book]
+    
     @State private var isPresentedSheet = false
     
-    var books = (0...100).map { index in
-        Book(id: "\(index)", title: "book title \(index)", links: [])
-    }
-    
-    var filteredBooks: [Book] {
-        if q.isEmpty {
-            return books
-        }
-        
-        return books.filter { book in
-            book.title.contains(q)
-        }
-    }
-    
     var body: some View {
-        VStack {
-            TextField(
-                "Find in Books",
-                text: $q
-            )
-            List {
-                Button(action: presentSheet) {
-                    BookRow(book: Book(id: "New Book", title: "New Book...", links: []))
-                }
-                ForEach(filteredBooks) {book in
-                    NavigationLink(value: book) {
-                        BookRow(book: book)
-                    }
+        List {
+            Button(action: presentSheet) {
+                BookRow(book: Book(id: "New Book", title: "New Book...", links: []))
+            }
+            ForEach(books) {book in
+                NavigationLink(value: book) {
+                    BookRow(book: book)
                 }
             }
-            .listStyle(PlainListStyle())
         }
-        .navigationTitle("Books")
+        .listStyle(PlainListStyle())
         .sheet(isPresented: $isPresentedSheet) {
             NavigationStack {
                 BookCreate(isPresentedSheet: $isPresentedSheet)
             }
         }
+        
     }
     
     func presentSheet() {
@@ -57,5 +38,9 @@ struct BookList: View {
 }
 
 #Preview {
-    BookList()
+    NavigationStack {
+        BookList(books: (0...100).map { index in
+            Book(id: "\(index)", title: "book title \(index)", links: [])
+        })
+    }
 }
