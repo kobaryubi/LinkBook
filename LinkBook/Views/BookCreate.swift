@@ -42,5 +42,7 @@ struct BookCreate: View {
 }
 
 #Preview {
-    BookCreate(isPresentedSheet: .constant(true))
+    NavigationStack {
+        BookCreate(isPresentedSheet: .constant(true))
+    }
 }
