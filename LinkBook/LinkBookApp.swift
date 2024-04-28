@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct LinkBookApp: App {
-    var navigation = Navigation()
+    @State private var navigation = Navigation()
     
     var body: some Scene {
         WindowGroup {
