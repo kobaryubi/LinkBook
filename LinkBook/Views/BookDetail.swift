@@ -17,5 +17,7 @@ struct BookDetail: View {
 }
 
 #Preview {
-    BookDetail(book: Book(id: "1", title: "book title", links: []))
+    NavigationStack {
+        BookDetail(book: Book(id: "1", title: "book title", links: []))
+    }
 }

@@ -39,7 +39,6 @@ struct ContentView: View {
                     placement: .navigationBarDrawer(displayMode: .always),
                     prompt: "Find in Books"
                 )
-            
         }
     }
 }
